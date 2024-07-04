@@ -1,3 +1,5 @@
+@import "./modules/node_modules/modern-normalize/modern-normalize.css";
+
 @font-face {
     font-family: "roboto";
     src: url("./fonts/roboto-thin-webfont.woff2") format("woff2"),
@@ -29,8 +31,6 @@
     font-weight: bold;
     font-style: normal;
 }
-
-@import "./modules/node_modules/modern-normalize/modern-normalize.css";
 
 *,
 *::before,
@@ -64,6 +64,47 @@ p, h1, h2, h3, h4, h5, h6 {
     --indigo-800: #3730a3;
     --indigo-900: #312e81;
     --indigo-950: #1e1b4b;
+}
+
+.page.library {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    place-items: center;
+    background-color: var(--indigo-100);
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    background-color: var(--indigo-400);
+    box-shadow: 0 10px 10px -10px var(--indigo-950);
+    border-radius: 0 0 10px 10px;
+    user-select: text;
+    z-index: 1;
+}
+
+.title-description {
+    max-width: 80ch;
+    color: var(--indigo-100);
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+}
+
+.title-heading {
+    color: var(--indigo-50);
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+}
+
+.books-container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--indigo-100);
+    user-select: text;
 }
 
 
