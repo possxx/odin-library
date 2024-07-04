@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "roboto";
+    src: url("./fonts/roboto-thin-webfont.woff2") format("woff2"),
+         url("./fonts/roboto-thin-webfont.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("./fonts/roboto-light-webfont.woff2") format("woff2"),
+         url("./fonts/roboto-light-webfont.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("./fonts/roboto-regular-webfont.woff2") format("woff2"),
+         url("./fonts/roboto-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("./fonts/roboto-bold-webfont.woff2") format("woff2"),
+         url("./fonts/roboto-bold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@import "./modules/node_modules/modern-normalize/modern-normalize.css";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --indigo-50: #eef2ff;
+    --indigo-100: #e0e7ff;
+    --indigo-200: #c7d2fe;
+    --indigo-300: #a5b4fc;
+    --indigo-400: #818cf8;
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    --indigo-700: #4338ca;
+    --indigo-800: #3730a3;
+    --indigo-900: #312e81;
+    --indigo-950: #1e1b4b;
+}
+
+
+
