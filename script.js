@@ -13,9 +13,6 @@ function addBookToLibrary(author, title, pages, description, read) {
     myLibrary.push(book);
 }
 
-addBookToLibrary("J.R.R Tolkien", "The Hobbit", "296", "Adventure type shi*", true);
-addBookToLibrary("J.K. Rowling", "Harry Potter", "693", "You are a wizard, Harry", false);
-
 const booksContainer = document.querySelector(".books-container");
 
 function createBookCards() {
@@ -57,12 +54,30 @@ function createBookCards() {
         bookIcons.appendChild(removeCard);
 
         bookTitle.textContent = book.title;
-        bookAuthor.textContent = book.author;
+        bookAuthor.textContent = `by ${book.author}`;
         bookPages.textContent = `Pages: ${book.pages}`;
         bookDescription.textContent = `Description: ${book.description}`;
 
         booksContainer.appendChild(bookCard);
     })
 }
+
+const bookCardAdd = document.querySelector(".book-card-add");
+const bookCardInput = document.querySelector(".book-card-input");
+const bookCardAddIcon = document.querySelector(".book-card-add-icon");
+const bookCardCloseButton = document.querySelector(".book-card-close-button");
+
+bookCardAddIcon.addEventListener("click", () => {
+    bookCardAdd.classList.toggle("display-none");
+    bookCardInput.classList.toggle("display-none");
+})
+
+bookCardCloseButton.addEventListener("click", () => {
+    bookCardAdd.classList.toggle("display-none");
+    bookCardInput.classList.toggle("display-none");
+})
+
+addBookToLibrary("J.R.R Tolkien", "The Hobbit", "296", "Adventure type shi*", true);
+addBookToLibrary("J.K. Rowling", "Harry Potter", "693", "You are a wizard, Harry", false);
 
 createBookCards();

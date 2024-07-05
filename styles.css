@@ -120,25 +120,129 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--indigo-100);
     border-radius: 12px;
     box-shadow: 7px 7px 10px -10px var(--indigo-950);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.book-card-input form {
     display: flex;
     flex-direction: column;
 }
 
+.book-card-input form input:first-child {
+    font-size: 2em;
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    appearance: none;
+    border: none;
+    background-color: var(--indigo-100);
+    color: var(--indigo-400);
+    border-bottom: 1px solid var(--indigo-400);
+}
+
+.book-card-input form input:nth-child(2) {
+    font-size: inherit;
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: 300;
+    appearance: none;
+    border: none;
+    background-color: var(--indigo-100);
+    color: var(--indigo-400);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--indigo-400);
+}
+
+.book-card-input form input:nth-child(3) {
+    font-size: inherit;
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: 300;
+    appearance: none;
+    border: none;
+    background-color: var(--indigo-100);
+    color: var(--indigo-400);
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--indigo-400);
+}
+
+.book-card-input form input:first-child:focus,
+.book-card-input form input:nth-child(2):focus,
+.book-card-input form input:nth-child(3):focus,
+.book-card-input form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--indigo-500);
+}
+
+.book-card-input form input:first-child::placeholder,
+.book-card-input form input:nth-child(2)::placeholder,
+.book-card-input form input:nth-child(3)::placeholder,
+.book-card-input form textarea::placeholder {
+    color: var(--indigo-400);
+}
+
+.book-card-input form textarea {
+    appearance: none;
+    height: 7em;
+    font-size: inherit;
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: 300;
+    border: none;
+    background-color: var(--indigo-100);
+    color: var(--indigo-400);
+    border-bottom: 1px solid var(--indigo-400);
+    resize: none;
+}
+
+.book-card-input-buttons {
+    display: flex;
+    gap: 1em;
+    margin-top: 1.5em;
+    align-self: center;
+}
+
+.book-card-input-buttons button {
+    padding: 0.5em 2em;
+    border-radius: 12px;
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    appearance: none;
+}
+
+.book-card-input-buttons button:first-child {
+    background-color: var(--indigo-400);
+    color: var(--indigo-50);
+    border: none;
+    cursor: pointer;
+}
+
+.book-card-input-buttons button:first-child:hover {
+    background-color: var(--indigo-500);
+}
+
+.book-card-input-buttons button:nth-child(2) {
+    background-color: var(--indigo-100);
+    color: var(--indigo-400);
+    border: 2px solid var(--indigo-400);
+    cursor: pointer;
+}
+
+.book-card-input-buttons button:nth-child(2):hover {
+    border: 2px solid var(--indigo-500);
+    color: var(--indigo-500);
+}
+
 .book-card-add {
+    width: 100%;
+    height: 376.97px;
     padding: 1.5em;
     background-color: var(--indigo-100);
     border-radius: 12px;
     box-shadow: 7px 7px 10px -10px var(--indigo-950);
     text-align: center;
     display: grid;
-    grid-template-rows: 2em 16em;
     row-gap: 1em;
     place-items: center;
-}
-
-.display-none {
-    display: none;
 }
 
 .book-title-add {
@@ -149,10 +253,14 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .book-card-add svg {
-    max-width: 16em;
-    max-height: 16em;
+    max-width: 15em;
+    max-height: 15em;
     fill: var(--indigo-400);
     cursor: pointer;
+}
+
+.display-none {
+    display: none;
 }
 
 .book-card {
