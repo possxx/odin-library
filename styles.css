@@ -119,14 +119,18 @@ p, h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
     box-shadow: 7px 7px 10px -10px var(--indigo-950);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-icons {
+    align-self: end;
     display: grid;
     grid-template-columns: 1.8em 1.8em;
     column-gap: 1em;
     justify-content: end;
     fill: var(--indigo-50);
+    margin-top: auto;
 }
 
 .book-icons svg {
