@@ -113,6 +113,48 @@ p, h1, h2, h3, h4, h5, h6 {
     row-gap: 1em;
 }
 
+.book-card-input {
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    background-color: var(--indigo-100);
+    border-radius: 12px;
+    box-shadow: 7px 7px 10px -10px var(--indigo-950);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card-add {
+    padding: 1.5em;
+    background-color: var(--indigo-100);
+    border-radius: 12px;
+    box-shadow: 7px 7px 10px -10px var(--indigo-950);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 2em 16em;
+    row-gap: 1em;
+    place-items: center;
+}
+
+.display-none {
+    display: none;
+}
+
+.book-title-add {
+    font-family: "roboto", system-ui, "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: var(--indigo-400);
+}
+
+.book-card-add svg {
+    max-width: 16em;
+    max-height: 16em;
+    fill: var(--indigo-400);
+    cursor: pointer;
+}
+
 .book-card {
     padding: 1.5em;
     background-color: var(--indigo-400);
