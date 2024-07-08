@@ -66,11 +66,16 @@ p, h1, h2, h3, h4, h5, h6 {
     --indigo-950: #1e1b4b;
 }
 
+body {
+    min-height: 100dvh;
+    background-color: var(--indigo-50);
+}
+
 .page.library {
     display: grid;
     grid-template-rows: 200px 1fr;
     place-items: center;
-    background-color: var(--indigo-100);
+    background-color: var(--indigo-50);
 }
 
 .title-container {
