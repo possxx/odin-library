@@ -273,18 +273,22 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
+.book-card-read {
+    background-color: var(--indigo-500);
+}
+
 .book-icons {
     align-self: end;
     display: grid;
     grid-template-columns: 1.8em 1.8em;
     column-gap: 1em;
     justify-content: end;
-    fill: var(--indigo-50);
     margin-top: auto;
 }
 
 .book-icons svg {
     cursor: pointer;
+    fill: var(--indigo-50);
 }
 
 .book-title {
