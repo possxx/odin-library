@@ -80,6 +80,21 @@ function createBookCards() {
     })
 }
 
+function addReadBooks() {
+    const book1 = document.querySelector(`[data="card-1"]`);
+    const book1ReadIcon = document.querySelector(`[data="read-1"]`);
+    const book1RemoveIcon = document.querySelector(`[data="remove-1"]`);
+    book1.classList.toggle("book-card-read");
+    book1ReadIcon.classList.toggle("display-none");
+    book1RemoveIcon.classList.toggle("display-none");
+    const book2 = document.querySelector(`[data="card-3"]`);
+    const book2ReadIcon = document.querySelector(`[data="read-3"]`);
+    const book2RemoveIcon = document.querySelector(`[data="remove-3"]`);
+    book2.classList.toggle("book-card-read");
+    book2ReadIcon.classList.toggle("display-none");
+    book2RemoveIcon.classList.toggle("display-none");
+}
+
 addBookToLibrary("J.R.R. Tolkien", "The Hobbit", 296, "The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug.");
 addBookToLibrary("Robert Louis Stevenson", "Treasure Island", 240, "This classic tale follows young Jim Hawkins as he embarks on a perilous sea journey to find buried treasure, encountering pirates like the infamous Long John Silver.");
 addBookToLibrary("Jack London", "The Call of the Wild", 232, "Set in the Yukon during the Klondike Gold Rush, this novel follows a domesticated dog named Buck as he returns to his wild instincts to survive in the harsh wilderness.");
@@ -87,6 +102,7 @@ addBookToLibrary("Yann Martel", "Life of Pi", 319, "Pi Patel, a young Indian boy
 addBookToLibrary("Gary Paulsen", "Hatchet", 195, "After a plane crash, thirteen-year-old Brian Robeson must survive alone in the Canadian wilderness with only a hatchet, facing numerous challenges that test his resilience and ingenuity.");
 
 createBookCards(myLibrary);
+addReadBooks();
 
 function addBookCard() {
     const newBookIndex = myLibrary.length - 1;
