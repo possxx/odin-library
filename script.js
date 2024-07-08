@@ -55,6 +55,8 @@ function createBookCards() {
         const removeCard = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         removeCard.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         removeCard.setAttribute("viewBox", "0 0 24 24");
+        removeCard.setAttribute("data", `remove-card-${bookIndex}`);
+        removeCard.classList.add("remove-card-icon");
         const removeCardPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         removeCardPath.setAttribute("d", "M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7,13H17V11H7");
         removeCard.appendChild(removeCardPath);
@@ -80,7 +82,7 @@ function createBookCards() {
 
 addBookToLibrary("J.R.R. Tolkien", "The Hobbit", 296, "Description: The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug.");
 
-createBookCards();
+createBookCards(myLibrary);
 
 function addBookCard() {
     const newBookIndex = myLibrary.length - 1;
@@ -154,6 +156,10 @@ function addBookCard() {
         removeFromRead.classList.toggle("display-none");
         bookCard.classList.toggle("book-card-read");
     })
+
+    removeCard.addEventListener("click", () => {
+        bookCard.remove();
+    })
 }
 
 const bookCardAdd = document.querySelector(".book-card-add");
@@ -197,6 +203,7 @@ bookCardSubmit.addEventListener("click", (event) => {
 
 const bookReadIcon = document.querySelectorAll(".book-read-icon");
 const bookReadIconRemove = document.querySelectorAll(".book-read-icon-remove");
+const removeCardIcon = document.querySelectorAll(".remove-card-icon");
 
 bookReadIcon.forEach(icon => {
     icon.addEventListener("click", () => {
@@ -227,3 +234,15 @@ bookReadIconRemove.forEach(icon => {
         iconCard.classList.toggle("book-card-read");
     })
 })
+
+removeCardIcon.forEach(icon => {
+    icon.addEventListener("click", () => {
+        const cardIndex = icon.getAttribute("data")
+                          .split("-")
+                          .splice(2, 3)
+                          .toString();  
+    const iconCard = document.querySelector(`[data="card-${cardIndex}"]`);
+    iconCard.remove();
+    })
+})
+
