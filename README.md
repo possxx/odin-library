@@ -1,0 +1,1 @@
+Simple book library interface, that allows you to add books with the title of the book, name of the author, number of pages, a short description and keep track of which books you have and haven't read. 
