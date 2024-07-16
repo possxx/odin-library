@@ -1,16 +1,28 @@
 const myLibrary = [];
 
-function Book(author, title, pages, description) {
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.description = description;
+class Book {
+    constructor(author, title, pages, description) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.description = description;
+    }
+
+    addBookToLibrary() {
+        myLibrary.push(this);
+    }
 }
 
-function addBookToLibrary(author, title, pages, description) {
-    let book = new Book(author, title, pages, description);
-    myLibrary.push(book);
-}
+const book1 = new Book("J.R.R. Tolkien", "The Hobbit", 296, "The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug.");
+book1.addBookToLibrary();
+const book2 = new Book("Robert Louis Stevenson", "Treasure Island", 240, "This classic tale follows young Jim Hawkins as he embarks on a perilous sea journey to find buried treasure, encountering pirates like the infamous Long John Silver.");
+book2.addBookToLibrary();
+const book3 = new Book("Jack London", "The Call of the Wild", 232, "Set in the Yukon during the Klondike Gold Rush, this novel follows a domesticated dog named Buck as he returns to his wild instincts to survive in the harsh wilderness.");
+book3.addBookToLibrary();
+const book4 = new Book("Yann Martel", "Life of Pi", 319, "Pi Patel, a young Indian boy, survives a shipwreck and is left stranded on a lifeboat in the Pacific Ocean with a Bengal tiger, forging an extraordinary journey of survival and faith.");
+book4.addBookToLibrary();
+const book5 = new Book("Gary Paulsen", "Hatchet", 195, "After a plane crash, thirteen-year-old Brian Robeson must survive alone in the Canadian wilderness with only a hatchet, facing numerous challenges that test his resilience and ingenuity.");
+book5.addBookToLibrary();
 
 const booksContainer = document.querySelector(".books-container");
 const newBooksContainer = document.querySelector(".book-card-add-input");
@@ -94,12 +106,6 @@ function addReadBooks() {
     book2ReadIcon.classList.toggle("display-none");
     book2RemoveIcon.classList.toggle("display-none");
 }
-
-addBookToLibrary("J.R.R. Tolkien", "The Hobbit", 296, "The Hobbit is set in Middle-earth and follows home-loving Bilbo Baggins, the hobbit of the title, who joins the wizard Gandalf and the thirteen dwarves of Thorin's Company, on a quest to reclaim the dwarves' home and treasure from the dragon Smaug.");
-addBookToLibrary("Robert Louis Stevenson", "Treasure Island", 240, "This classic tale follows young Jim Hawkins as he embarks on a perilous sea journey to find buried treasure, encountering pirates like the infamous Long John Silver.");
-addBookToLibrary("Jack London", "The Call of the Wild", 232, "Set in the Yukon during the Klondike Gold Rush, this novel follows a domesticated dog named Buck as he returns to his wild instincts to survive in the harsh wilderness.");
-addBookToLibrary("Yann Martel", "Life of Pi", 319, "Pi Patel, a young Indian boy, survives a shipwreck and is left stranded on a lifeboat in the Pacific Ocean with a Bengal tiger, forging an extraordinary journey of survival and faith.");
-addBookToLibrary("Gary Paulsen", "Hatchet", 195, "After a plane crash, thirteen-year-old Brian Robeson must survive alone in the Canadian wilderness with only a hatchet, facing numerous challenges that test his resilience and ingenuity.");
 
 createBookCards(myLibrary);
 addReadBooks();
@@ -205,12 +211,9 @@ const inputTextarea = document.querySelector(".input-textarea");
 const bookCardSubmit = document.querySelector(".book-card-submit-button");
 
 bookCardSubmit.addEventListener("click", (event) => {
-    let title = inputTitle.value;
-    let author = inputAuthor.value;
-    let pages = inputPages.value;
-    let description = inputTextarea.value;
-    
-    addBookToLibrary(author, title, pages, description);
+    let book = new Book(inputAuthor.value, inputTitle.value, inputPages.value, inputTextarea.value);
+    book.addBookToLibrary();
+
     addBookCard();
 
     inputTitle.value = "";
